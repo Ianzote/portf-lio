@@ -5,40 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap" rel="stylesheet">
-    
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+</head>
 
-    </head>
 <body>
-
-    <header class="site-header">
-
-
-        <div class="esquerda">
-            <img src="./img/ian.jpg" alt="Rosto do Ian" id="ian">
-            </div>
-            <div class="meio">
-                <h1>Ian Felipe Ferreira Evangelista</h1>
-            <nav>
-                <a href="#sobre">Sobre</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#contato">Contato</a>
-            </nav>
+    <header>
+        <div class="logo">Solutian & Co.</div>
+        <ul class="menu">
+            <li><a href="#resumo">Resumo</a></li>
+            <li><a href="#sobre">Um pouco mais...</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="search">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.403 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6.403a3.01 3.01 0 0 1-1.743-1.612l-3.025 3.025A3 3 0 1 1 9.99 9.768l3.025-3.025A3.01 3.01 0 0 1 11.403 5Z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M13.232 4a1 1 0 0 1 1-1H20a1 1 0 0 1 1 1v5.768a1 1 0 1 1-2 0V6.414l-6.182 6.182a1 1 0 0 1-1.414-1.414L17.586 5h-3.354a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+            </svg>
         </div>
-
-            <div class="direita">
-                <img src="./img/Brand - Solutian & Co..svg" alt="Logo do Ian" id="logo">
-            </div>
-
-            
     </header>
 
-    <main>
-        
+    <!-- Slider -->
+<div class="slider">
+    <div class="list">
+        <div class="item active">
+            <img src="img/ian.jpg" alt="Slider 01">
+            <div class="content">
+                <p>design</p>
+                <h2>Slider 01</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/IMG_3441.jpg" alt="Slider 02">
+            <div class="content">
+                <p>design</p>
+                <h2>Slider 02</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/IMG_3593.jpg" alt="Slider 03">
+            <div class="content">
+                <p>design</p>
+                <h2>Slider 03</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/IMG_3356.jpg" alt="Slider 04">
+            <div class="content">
+                <p>design</p>
+                <h2>Slider 04</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Miniaturas -->
+    <div class="thumbnail">
+        <div class="item active"><img src="img/ian.jpg" alt="Thumb 01"></div>
+        <div class="item"><img src="img/IMG_3441.jpg" alt="Thumb 02"></div>
+        <div class="item"><img src="img/IMG_3593.jpg" alt="Thumb 03"></div>
+        <div class="item"><img src="img/IMG_3356.jpg" alt="Thumb 04"></div>
+    </div>
+
+    <!-- Arrows -->
+    <div class="arrows">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+    </div>
+</div>
+
+    <main>
         <section class="container">
             <h2>Áreas de atuação</h2>
             <div class="grid">
@@ -69,7 +113,6 @@
             </div>
         </section>
 
-
         <section id="projetos" class="container">
             <h2>Projetos</h2>
             <div class="grid2">
@@ -99,25 +142,28 @@
 
         <section id="sobre" class="container">
             <h2>Um pouco mais sobre mim</h2>
-            <p>Sou Ian Felipe Ferreira Evangelista, professor de francês, estudante de Engenharia pela Universidade Federal do Paraná (UFPR) e fundador da Solutian & Company, uma empresa que conecta educação, tecnologia e criação digital.
-Morei por um ano na Alsácia, região bilíngue no leste da França,
-onde vivi uma imersão completa na língua e na cultura francesa — experiência que moldou minha visão sobre ensino e aprendizado.
-Sou uma pessoa multitask, com atuação que vai do ensino de 
-francês ao desenvolvimento web, passando pela criação de conteúdo e gestão de projetos educacionais. Acredito no poder da inovação 
-e da criatividade para transformar ideias em resultados reais, e é isso que me move em cada novo desafio.</p>
-        </p>
+            <p>
+                Sou Ian Felipe Ferreira Evangelista, professor de francês, estudante de Engenharia pela Universidade Federal do Paraná (UFPR) e fundador da Solutian & Company, uma empresa que conecta educação, tecnologia e criação digital.
+                Morei por um ano na Alsácia, região bilíngue no leste da França,
+                onde vivi uma imersão completa na língua e na cultura francesa — experiência que moldou minha visão sobre ensino e aprendizado.
+                Sou uma pessoa multitask, com atuação que vai do ensino de 
+                francês ao desenvolvimento web, passando pela criação de conteúdo e gestão de projetos educacionais. Acredito no poder da inovação 
+                e da criatividade para transformar ideias em resultados reais, e é isso que me move em cada novo desafio.
+            </p>
         </section>
 
         <section id="contato" class="container">
             <h2>Contato</h2>
             <p>Informações de contato.</p>
         </section>
+    </main>
 
-    </main> <footer class="site-footer">
+    <footer class="site-footer">
         <div class="container">
             <p>© 2025 — Ian</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
