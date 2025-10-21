@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap');
-    </style>
 
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    </head>
 <body>
+
     <header class="site-header">
-        <div class="container">
-            <h1>Ian Felipe Ferreira Evangelista</h1>
+
+
+        <div class="esquerda">
+            <img src="./img/ian.jpg" alt="Rosto do Ian" id="ian">
+            </div>
+            <div class="meio">
+                <h1>Ian Felipe Ferreira Evangelista</h1>
             <nav>
                 <a href="#sobre">Sobre</a>
                 <a href="#projetos">Projetos</a>
                 <a href="#contato">Contato</a>
             </nav>
         </div>
+
+            <div class="direita">
+                <img src="./img/Brand - Solutian & Co..svg" alt="Logo do Ian" id="logo">
+            </div>
+
+            
     </header>
+
+    <main>
+        
 
         <section class="container">
             <h2>Áreas de atuação</h2>
@@ -52,28 +69,55 @@
             </div>
         </section>
 
-    <main class="container">
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
+
+        <section id="projetos" class="container">
+            <h2>Projetos</h2>
+            <div class="grid2">
+                <div class="card2">
+                    <h3>Projeto 1</h3>
+                    <p>Descrição do projeto 1.</p>
+                </div>
+                <div class="card2">
+                    <h3>Projeto 2</h3>
+                    <p>Descrição do projeto 2.</p>
+                </div>
+                <div class="card2">
+                    <h3>Projeto 3</h3>
+                    <p>Descrição do projeto 3.</p>
+                </div>
+                <div class="card2">
+                    <h3>Projeto 4</h3>
+                    <p>Descrição do projeto 4.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resumo" class="container">
+            <h2>Resumo</h2>
+            <p>Aqui você pode listar seus projetos...</p>
+        </section>
+
+        <section id="sobre" class="container">
+            <h2>Um pouco mais sobre mim</h2>
             <p>Sou Ian Felipe Ferreira Evangelista, professor de francês, estudante de Engenharia pela Universidade Federal do Paraná (UFPR) e fundador da Solutian & Company, uma empresa que conecta educação, tecnologia e criação digital.
 Morei por um ano na Alsácia, região bilíngue no leste da França,
 onde vivi uma imersão completa na língua e na cultura francesa — experiência que moldou minha visão sobre ensino e aprendizado.
 Sou uma pessoa multitask, com atuação que vai do ensino de 
 francês ao desenvolvimento web, passando pela criação de conteúdo e gestão de projetos educacionais. Acredito no poder da inovação 
 e da criatividade para transformar ideias em resultados reais, e é isso que me move em cada novo desafio.</p>
+        </p>
         </section>
 
-        <section id="contato">
+        <section id="contato" class="container">
             <h2>Contato</h2>
             <p>Informações de contato.</p>
         </section>
-    </main>
 
-    <footer class="site-footer">
+    </main> <footer class="site-footer">
         <div class="container">
             <p>© 2025 — Ian</p>
         </div>
     </footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,94 +1,216 @@
-*{
+:root {
+    --font-primary: "Questrial", sans-serif;
+    --font-display: "Playfair Display", serif;
+    
+    --color-primary: #e8491d;
+    --color-dark: #35424a;
+    --color-light: #ffffff;
+    --color-text: #333;
+    --color-bg: #f4f4f4;
+    --color-border: #dddddd;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    line-height: 1.8;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .site-header {
-    background: #35424a;
-    color: #ffffff;
-    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 5px 10px 0 10px;
     min-height: 70px;
-    border-bottom: #e8491d 3px solid;
+    border-bottom: var(--color-primary) 4px solid;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
-.site-header h1 {
-    font-family: "Questrial", sans-serif;
-    font-weight: 600;
-    font-size: 65px;
-    text-align: center;;
-    margin: 0;
+#logo{
+    width: 190px;
+    height: 190px;
+    margin-top: 0px;
+    object-fit: cover;
+}
+
+.direita{
+    width: 200px;
+    height: 200px;
+}
+
+.direita, .esquerda {
+    flex: 1;
+}
+
+.meio {
+    text-align: center;
+    align-items: center;
+    width: 120%;
+}
+
+.meio h1 {
+    font: var(--font-primary);
+    font-size: 68px;
+    font-weight: 500;
+    margin: 50px 0 0 0;
+}
+
+.meio nav {
+    width: 100%;
+    margin-top: 90px;
+    justify-content: center;
+}
+
+.meio nav a {
+    color: #f4f4f4;
+    justify-content: bottom;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.esquerda img{
+    width: 200px;
+    height: 200px;
+    margin-left: 30px;
+    border-radius: 20%;
+    object-fit: cover;
 }
 
 .site-header nav {
-    margin-top: 10px;
-    text-align: center;
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
 }
 
 .site-header nav a {
-    font-family: "Questrial", sans-serif;
-    font-weight: 200;
-    color: #ffffff;
+    color: var(--color-light);
     text-decoration: none;
     margin: 0 15px;
     text-transform: uppercase;
     font-size: 16px;
+    font-weight: 200;
 }
 
 .site-header nav a:hover {
-    color: #e8491d;
+    color: var(--color-primary);
 }
 
+main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-weight: 400;
+    border-bottom: var(--color-primary) 2px solid;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    background: var(--color-light);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    transition: all 0.5s ease;
+    transform: scale(1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--color-text, #111);
+    z-index: 1;
+}
+
+/* hover com zoom centralizado */
+.card:hover {
+    position: relative; /* mantém o fluxo, mas ativa pseudo overlay */
+    z-index: 10;
+    transform-origin: center center;
+    transform: scale(1.5);
+}
+
+.card:hover::after {
+    content: "";
+    position: fixed; /* cria um overlay escuro por trás */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+    pointer-events: none;
+}
+
+/* deixa texto legível */
+.card * {
+    color: inherit;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
 .site-footer {
-    background: #35424a;
-    color: #ffffff;
+    background: var(--color-dark);
+    color: var(--color-light);
     text-align: center;
     padding: 20px 0;
     margin-top: 20px;
 }
 
-main.container {
-    padding: 20px 0;
-}
 
-section {
-    margin-bottom: 20px;
-}   
 
-section h2 {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    border-bottom: #e8491d 2px solid;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.grid {
+.grid2 {
     display: flex;
-    align-items: center;
     gap: 20px;
+    overflow: auto;
+    flex-wrap: nowrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
 }
 
-.card {
-    background: #ffffff;
-    padding: 20px;
-    width: 100%;
-    height: 300px;
-    border: #dddddd 1px solid;
-    border-radius: 5px;
-    text-align: center;
-}
+
+.card2 {
+    background-color: #35424a2f;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 15px;
+    width: 320px;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, z-index 0s 0s;
+    }
