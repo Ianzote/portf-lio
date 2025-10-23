@@ -15,25 +15,37 @@ body {
 }
 
 /* ===================== SVG ===================== */
-svg {
-    width: 25px;
-    transition: 0.3s;
-    transform-origin: center;
+
+header .icons {
+    width: 240px;
+    display: flex;
+    position: relative;
+    right: 190px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
-svg:hover {
+.icons svg {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s, fill 0.3s;
+}
+
+.icons svg:hover {
+    transform: scale(1.1);
     fill: #e8491d;
     cursor: pointer;
-    transform: scale(1.1);
 }
+
+
 
 /* ===================== HEADER ===================== */
 header {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1700px;
     margin: 0px;
     display: grid;
-    grid-template-columns: 150px 1fr 50px;
+    grid-template-columns: 150px 1fr 150px;
     grid-template-rows: 50px;
     align-items: center;
     position: relative;
@@ -76,6 +88,7 @@ header .menu li :hover {
     width: 100%;
     height: calc(100vh - 90px); /* altura total menos header */
     overflow: hidden;
+    
 }
 
 .slider .list {
@@ -89,12 +102,14 @@ header .menu li :hover {
     inset: 0;
     width: 100%;
     height: 100%;
+    transform: scale(1.05);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 .slider .list .item.active {
     opacity: 1;
+    transform: scale(1);
     z-index: 10;
 }
 
@@ -102,25 +117,27 @@ header .menu li :hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.5s ease;
 }
+
 
 .slider .list .item::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 40%, transparent);
+    background: conic-gradient(from deg, rgba(0, 0, 0, 0.815), rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.822));
 }
 
 /* ===================== CONTEÚDO DO SLIDE ===================== */
 .slider .list .item .content {
     position: absolute;
     left: 10%;
-    top: 20%;
-    width: min(500px, 80%);
+    top: 5%;
+    width: 75%;         
+    max-width: 1200px;  
     z-index: 11;
     color: #fff;
 }
-
 .slider .list .item .content p:first-child {
     text-transform: uppercase;
     letter-spacing: 10px;
@@ -133,12 +150,30 @@ header .menu li :hover {
     margin: 10px 0;
 }
 
+/* ===================== PARÁGRAFOS DO SLIDER ===================== */
+.slider .list .item .content p span {
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.7s ease 0.2s;
+}
+
+/* Hover do parágrafo */
+.slider .list .item .content p span:hover {
+    transform: translateY(0) scale(1.2);
+    transition: transform 0.7s ease 0.2s;
+    font-weight: bold;
+    color: #e8491d;
+}
+
+
+
+
 /* ===================== ANIMAÇÃO ===================== */
 @keyframes showContent {
     to {
         transform: translateY(0);
         filter: blur(0);
-        opacity: 1;
+        opacity: 3;
     }
 }
 
@@ -148,19 +183,19 @@ header .menu li :hover {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent 0.5s 0.7s ease-in-out forwards;
+    animation: showContent 0.7s 0.2s ease-in-out forwards;
 }
 
 .slider .list .item.active h2 {
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 .slider .list .item.active p:nth-child(3) {
-    animation-delay: 1.3s;
+    animation-delay: 0.2s;
 }
 
 
-/* ===================== ARROWS ===================== */
+
 /* ===================== ARROWS ===================== */
 .arrows {
     position: absolute;
@@ -191,16 +226,18 @@ header .menu li :hover {
 
 
 /* ===================== MINIATURAS ===================== */
+
+
 .thumbnail {
     position: absolute;
-    bottom: 20px;
-    z-index: 11;
+    bottom: -40px;
+    z-index: 20;
     display: flex;
     gap: 10px;
     width: 100%;
     height: 200px;
     padding: 0 50px;
-    overflow-x: auto;
+    overflow-x: visible;
     justify-content: center;
 }
 
@@ -212,22 +249,28 @@ header .menu li :hover {
     position: relative;
     width: 150px;
     height: 220px;
-    filter: brightness(0.5);
+    filter: brightness(0.2);
     transition: 0.5s;
     flex-shrink: 0;
     cursor: pointer;
 }
 
+.thumbnail .item:hover{
+    cursor: pointer;
+    scale: 1.2;
+    filter: contrast(0.9);
+}
+
 .thumbnail .item img {
     width: 100%;
-    height: 100%;
+    height: 105%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .thumbnail .item.active {
-    filter: brightness(1.5);
-    transform: scale(1.05);
+    filter: brightness(1.1);
+    transform: scale(1);
 }
 
 .thumbnail .item .content {
@@ -255,7 +298,30 @@ section h2 {
     border-bottom: 2px solid #e8491d;
     padding-bottom: 10px;
     margin-bottom: 20px;
+}   
+
+/* ===================== RESUMO ===================== */
+.resumo-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
+
+.resumo-list ul {
+    list-style: square inside;
+    margin-left: 50px;
+}
+
+.resumo-list ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-left: 20px;
+}
+.resumo-list ul li::marker {
+    color: #e8491d;
+    margin-right: 20px;
+}   
 
 /* ===================== GRID ===================== */
 .grid {
@@ -293,26 +359,70 @@ section h2 {
 }
 
 /* ===================== GRID HORIZONTAL ===================== */
+.slider2 {
+    display: flex;
+    flex-direction: column; /* empilha os elementos verticalmente */
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+}
+
 .grid2 {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding: 30px 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow: hidden;
+    transition: transform 0.5s ease;
 }
 
 .card2 {
     background-color: rgba(53, 66, 74, 0.18);
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
     width: 320px;
-    height: 500px;
-    transition: transform 0.3s ease;
+    height: 480px;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* container dos botões */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* espaço entre botões */
+    margin-top: 25px; /* espaço acima dos botões */
+}
+
+/* estilo dos botões */
+.arrow {
+    background: rgba(232, 73, 29, 0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(232, 73, 29, 1);
+}
+
+
+.arrow:hover {
+    background: rgb(255, 245, 242);
+}
 /* ===================== FOOTER ===================== */
 .site-footer {
     background: #35424a;
@@ -320,6 +430,7 @@ section h2 {
     text-align: center;
     padding: 20px 0;
 }
+
 
 /* ===================== RESPONSIVO ===================== */
 @media screen and (max-width: 678px) {
