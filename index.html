@@ -10,28 +10,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS -->  
+<link rel="stylesheet" href="style.css">
+
+<script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+    type="module"
+></script>
 </head>
 
 <body>
     <header>
         <div class="logo">Solutian & Co.</div>
         <ul class="menu">
-            <li><a href="#resumo">Resumo</a></li>
-            <li><a href="#sobre">Um pouco mais...</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-        <div class="icons">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M11.403 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6.403a3.01 3.01 0 0 1-1.743-1.612l-3.025 3.025A3 3 0 1 1 9.99 9.768l3.025-3.025A3.01 3.01 0 0 1 11.403 5Z" clip-rule="evenodd"/>
                 <path fill-rule="evenodd" d="M13.232 4a1 1 0 0 1 1-1H20a1 1 0 0 1 1 1v5.768a1 1 0 1 1-2 0V6.414l-6.182 6.182a1 1 0 0 1-1.414-1.414L17.586 5h-3.354a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
             </svg>
-        
+            <div class="menuli">
+                <li><a href="#resumo">Resumo</a></li>
+                <li><a href="#sobre">Um pouco mais...</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </div>
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" viewBox="0 0 24 24">
             <path fill-rule="evenodd" d="M7.05 4.05A7 7 0 0 1 19 9c0 2.407-1.197 3.874-2.186 5.084l-.04.048C15.77 15.362 15 16.34 15 18a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1c0-1.612-.77-2.613-1.78-3.875l-.045-.056C6.193 12.842 5 11.352 5 9a7 7 0 0 1 2.05-4.95ZM9 21a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Zm1.586-13.414A2 2 0 0 1 12 7a1 1 0 1 0 0-2 4 4 0 0 0-4 4 1 1 0 0 0 2 0 2 2 0 0 1 .586-1.414Z" clip-rule="evenodd"/>
             </svg>
-        </div>
+        
+        </ul>
+        
     </header>
 
     <!-- Slider -->
@@ -110,93 +116,146 @@
         </div>
     </div>
         
-
+</div>
     <!-- Miniaturas -->
     <div class="thumbnail">
-        <div class="item active"><img src="img/ian.jpg" alt="Thumb 01"></div>
-        <div class="item"><img src="img/predioh.jpg" alt="Thumb 02"></div>
-        <div class="item"><img src="img/neve.jpg" alt="Thumb 03"></div>
-        <div class="item"><img src="img/monalisa.jpg" alt="Thumb 04"></div>
-        <div class="item"><img src="img/hamurabi.jpg" alt="Thumb 05"></div>
-        <div class="item"><img src="img/cozinha.jpg" alt="Thumb 06"></div>
-        <div class="item"><img src="img/jard.jpg" alt="Thumb 07"></div>
-        <div class="item"><img src="img/delf.jpg" alt="Thumb 08"></div>
+        <div class="list">
+            <div class="item active"><img src="img/ian.jpg" alt="Thumb 01"></div>
+            <div class="item"><img src="img/predioh.jpg" alt="Thumb 02"></div>
+            <div class="item"><img src="img/neve.jpg" alt="Thumb 03"></div>
+            <div class="item"><img src="img/monalisa.jpg" alt="Thumb 04"></div>
+            <div class="item"><img src="img/hamurabi.jpg" alt="Thumb 05"></div>
+            <div class="item"><img src="img/cozinha.jpg" alt="Thumb 06"></div>
+            <div class="item"><img src="img/jard.jpg" alt="Thumb 07"></div>
+            <div class="item"><img src="img/delf.jpg" alt="Thumb 08"></div>
+        </div>
     </div>
-
     <!-- Arrows -->
     <div class="arrows">
         <button id="prev">&lt;</button>
         <button id="next">&gt;</button>
     </div>
-</div>
+
 
     <main>
         <section class="container">
-            <h2>Serviços e Especialidades</h2>g
+        <h2>Serviços e Especialidades</h2>
         
-            <div class="grid">
-                <div>
-                    <h3>Tecnologia</h3>
-                    <div class="card" id="azul">
-                        <h3>Desenvolvimento Web</h3>
-                        <p>Descrição.</p>
-                    </div>
+        <div class="slidde-grid">
 
-                    <div class="card" id="azul">
-                        <h3>Automatizações</h3>
-                        <p>Descrição.</p>
-                    </div>
-                </div>
-                
+            <div class="grid">
+
                 <div>
-                    <h3>Design e Comunicação</h3>
-                        <div class="card" id="verde">
-                            <h3>Design e UX/UI</h3>
-                            <p>Descrição.</p>
+                    <h3 class="slide-main-title">Tecnologia</h3>
+
+                    <div class="lista-conectada-wrapper" data-slide-id="tec"> <div class="lista-servicos">
+                            <div class="item-servico active" data-key="devweb">
+                                <h3>Desenvolvimento Web</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="automacao">
+                                <h3>Automatizações</h3>
+                                <p>Descrição curta.</p>
+                            </div>
                         </div>
-                        <div class="card" id="verde">
-                            <h3>Criação de conteúdo digital</h3>
-                            <p>Descrição.</p>
+
+                        <div class="display-servico">
+                            <dotlottie-wc id="display-lottie-tec" src="" style="width: 200px; height: 200px;" loop autoplay>
+                            </dotlottie-wc>
+                            <p id="display-descricao-tec"> Passe o mouse sobre um serviço ao lado para ver os detalhes.
+                            </p>
                         </div>
-                        <div class="card" id="verde">
-                    <h3>Design e Branding</h3>
-                    <p>Descrição.</p>
-                </div>
-                <div class="card" id="verde">
-                    <h3>Social Media</h3>
-                    <p>Descrição.</p>
-                </div>  
-                </div>
-                    
-                <div>
-                        <h3>Consultoria e Estratégia</h3>
-                    <div class="card" id="amarelo">
-                        <h3>Consultorias</h3>
-                        <p>Descrição.</p>
+
+                    </div> </div> <div>
+                    <h3 class="slide-main-title">Design e Comunicação</h3>
+                    <div class="lista-conectada-wrapper" data-slide-id="design">
+
+                        <div class="lista-servicos">
+                            <div class="item-servico active" data-key="uxui">
+                                <h3>Design e UX/UI</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="conteudo">
+                                <h3>Criação de conteúdo digital</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="branding">
+                                <h3>Design e Branding</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="social">
+                                <h3>Social Media</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                        </div>
+
+                        <div class="display-servico">
+                            <dotlottie-wc id="display-lottie-design"
+                                src="" style="width: 200px; height: 200px;" loop autoplay>
+                            </dotlottie-wc>
+                            <p id="display-descricao-design">
+                                Passe o mouse sobre um serviço ao lado para ver os detalhes.
+                            </p>
+                        </div>
                     </div>
-                    <div class="card" id="amarelo">
-                        <h3>Parceiro Estratégico</h3>
-                        <p>Descrição.</p>
+                </div> <div>
+                    <h3 class="slide-main-title">Consultoria e Estratégia</h3>
+                    <div class="lista-conectada-wrapper" data-slide-id="consult">
+
+                        <div class="lista-servicos">
+                            <div class="item-servico active" data-key="consultoria">
+                                <h3>Consultorias</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="parceiro">
+                                <h3>Parceiro Estratégico</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                        </div>
+
+                        <div class="display-servico">
+                            <dotlottie-wc id="display-lottie-consult"
+                                src="" style="width: 200px; height: 200px;" loop autoplay>
+                            </dotlottie-wc>
+                            <p id="display-descricao-consult">
+                                Passe o mouse sobre um serviço ao lado para ver os detalhes.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                
-                <div>
-                    <h3>Idiomas e Educação</h3>                                
-                <div class="card" id="laranja">
-                        <h3>Tradução</h3>
-                        <p>Descrição.</p>
+                </div> <div>
+                    <h3 class="slide-main-title">Idiomas e Educação</h3>
+                    <div class="lista-conectada-wrapper" data-slide-id="idiomas">
+
+                        <div class="lista-servicos">
+                            <div class="item-servico active" data-key="traducao">
+                                <h3>Tradução</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="mentoria">
+                                <h3>Mentoria Francês</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                            <div class="item-servico" data-key="acompanhamento">
+                                <h3>Acompanhamento de Estudos</h3>
+                                <p>Descrição curta.</p>
+                            </div>
+                        </div>
+
+                        <div class="display-servico">
+                            <dotlottie-wc id="display-lottie-idiomas"
+                                src="" style="width: 200px; height: 200px;" loop autoplay>
+                            </dotlottie-wc>
+                            <p id="display-descricao-idiomas">
+                                Passe o mouse sobre um serviço ao lado para ver os detalhes.
+                            </p>
+                        </div>
                     </div>
-                    <div class="card" id="laranja">
-                        <h3>Mentoria Francês</h3>
-                        <p>Descrição.</p>
-                    </div>
-                    <div class="card" id="laranja">
-                        <h3>Acompanhamento de Estudos</h3>
-                        <p>Descrição.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </div> </div> <button class="slider-btn prev-btn">&lt;</button>
+            <button class="slider-btn next-btn">&gt;</button>
+            <div class="pagination"></div>
+            
+        </div> 
+</section>
 
         <section id="projetos" class="container">
             <h2>Projetos</h2>
@@ -327,7 +386,10 @@
     </footer>
 
     <script src="script.js"></script>
-
+    <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+    type="module"
+></script>
         <div id="lightbox-overlay">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="">

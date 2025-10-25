@@ -16,22 +16,21 @@ body {
 
 /* ===================== SVG ===================== */
 
-header .icons {
-    width: 1100px;
+header .menu{
     display: flex;
-    position: relative;
-    right: 1020px;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
 }
 
-.icons svg {
+.menu svg {
     width: 50px;
     height: 50px;
     transition: transform 0.3s, fill 0.3s;
 }
 
-.icons svg:hover {
+.menu svg:hover {
     transform: scale(1.1);
     fill: #e8491d;
     cursor: pointer;
@@ -119,7 +118,7 @@ header .logo {
     letter-spacing: 0.7px;
 }
 
-header .menu {
+header .menuli {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -127,17 +126,17 @@ header .menu {
     font-weight: 500;
 }
 
-header .menu li {
+header .menuli li {
     cursor: pointer;
     transition: color 1s;
     z-index: 10;
 }
-header .menu li a{
+header .menuli li a{
     text-decoration: none;
     color: #070707;
 }
 
-header .menu li :hover {
+header .menuli li :hover {
     color: #e8491d;
 }
 
@@ -145,7 +144,7 @@ header .menu li :hover {
 .slider {
     position: relative;
     width: 100%;
-    height: calc(100vh - 90px); /* altura total menos header */
+    height: calc(125vh - 90px); /* altura total menos header */
     overflow: hidden;
     
 }
@@ -153,7 +152,7 @@ header .menu li :hover {
 .slider .list {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 110%;
 }
 
 .slider .list .item {
@@ -261,7 +260,7 @@ header .menu li :hover {
 /* ===================== ARROWS ===================== */
 .arrows {
     position: absolute;
-    top: 40%;
+    top: 60%;
     right: 50px;
     z-index: 100;
     display: flex;
@@ -292,17 +291,30 @@ header .menu li :hover {
 
 .thumbnail {
     position: absolute;
-    bottom: -40px;
-    z-index: 20;
-    display: flex;
-    gap: 10px;
+    bottom: -160px;
+    z-index: 11;
     width: 100%;
-    height: 200px;
-    padding: 0 50px;
-    overflow-x: visible;
-    justify-content: center;
+    height: 290px; /* Altura da "janela" */
+    padding: 0 10px 0 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    /* MUDANÇA CRÍTICA: */
+    overflow: visible; /* Habilita o scroll horizontal */
+    /* REMOVEMOS: display: flex, gap, justify-content */
 }
 
+/* --- 2. O "TRILHO" (O FILHO .list) (NOVO) --- */
+.thumbnail .list {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Seu gap de 10px */
+    height: 220px; /* Altura do item (para não cortar em cima) */
+    transition: transform 0.5s ease;
+    overflow: visible;
+}
+
+/* --- 3. SEUS ITENS (CSS ORIGINAL, CORRIGIDO) --- */
 .thumbnail::-webkit-scrollbar {
     width: 0;
 }
@@ -317,9 +329,10 @@ header .menu li :hover {
     cursor: pointer;
 }
 
-.thumbnail .item:hover{
+.thumbnail .item:hover {
     cursor: pointer;
-    scale: 1.2;
+    /* CORREÇÃO: 'scale' é parte do 'transform' */
+    transform: scale(1.2); 
     filter: contrast(0.9);
 }
 
@@ -328,20 +341,12 @@ header .menu li :hover {
     height: 105%;
     object-fit: cover;
     border-radius: 40px;
+    z-index: 12; /* Bônus: faz pular na frente */
 }
 
 .thumbnail .item.active {
     filter: brightness(1.1);
     transform: scale(1);
-}
-
-.thumbnail .item .content {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    font-size: 0.9rem;
-    text-align: center;
 }
 
 /* ===================== CONTEÚDO ===================== */
@@ -360,7 +365,7 @@ section h2 {
     border-bottom: 2px solid #e8491d;
     padding-bottom: 10px;
     margin-bottom: 20px;
-}   
+}
 
 /* ===================== RESUMO ===================== */
 .resumo-list {
@@ -386,72 +391,201 @@ section h2 {
 }   
 
 /* ===================== GRID ===================== */
+/* 1. O Wrapper Principal (sua classe .slidde-grid) */
+/* (Note que está escrito "slidde" para bater com seu HTML) */
+.slidde-grid {
+    width: 90%;
+    height: 500px;
+    max-width: 800px;
+    padding: 10px;
+    margin: 2rem auto;
+    position: relative; /* Essencial para os botões */
+    overflow: hidden;  /* Essencial para esconder os outros slides */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. O Container que se move (sua classe .grid) */
 .grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 24px;
+    display: flex; /* Coloca os slides um ao lado do outro */
+    width: 100%;
+    /* Animação suave */
+    transition: transform 0.5s ease-in-out;
 }
 
-.container #cores-Azul {
-    color: rgb(6, 143, 255)
-    ;
-}
-.container #cores-Verde {
-    color: rgb(0, 255, 13)
-    ;
-}
-.container #cores-Amarelo {
-    color: rgb(255, 251, 0)
-    ;
-}
-.container #cores-Laranja {
-    color: rgb(255, 189, 6)
-    ;
+/* 3. Cada Slide Individual (os <div> filhos do .grid) */
+.grid > div {
+    min-width: 100%; /* Cada slide ocupa 100% da largura */
+    box-sizing: border-box;
+    padding: 25px;
 }
 
-.card {
-    margin-top: 10px;
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+/* 4. O Grid INTERNO (como você pediu) */
+.slide-content {
+    display: grid;
+    /* Duas colunas de tamanho igual */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 5px;
+}
+
+/* Faz o H3 ocupar toda a largura do grid interno */
+.slide-content > h3 {
+    grid-column: 1 / -1; 
+    margin-bottom: 10px;
     text-align: center;
-    flex: 1;
-    min-width: 250px;
-    transition: transform 0.8s ease, z-index 0s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. Botões e Paginação (Estilo padrão) */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.5rem;
     cursor: pointer;
-    overflow: hidden;
+    z-index: 12;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+.slider-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
 
-#azul {
-    background-color: #06665b80 !important;
-}
-#verde {
-    background-color: #90be6d !important;
-}
-#amarelo {
-    background-color: #d17225!important;
-}
-#laranja {
-    background-color: #8a0c27d7 !important;
-}
-
-.card:hover {
+.pagination {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     z-index: 10;
-    transform: scale(1.2);
+}
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.dot.active { background-color: #333; }
+
+
+/* --- Estilos dos seus Cards  servs--- */
+
+/*
+ * ========================================
+ * CSS CORRIGIDO: LISTA CONECTADA (IDEIA 3)
+ * ========================================
+ */
+
+/* 1. O Título principal de cada slide */
+.slide-main-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* (Ajuste se precisar) */
+    font-weight: 500;
 }
 
-.card:hover::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 9;
-    pointer-events: none;
+/* 2. O Container Principal (Duas Colunas) */
+.lista-conectada-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; /* Espaço entre as colunas */
+    min-height: 400px; /* Altura mínima para o slide */
+
+    /* Estilo de "card" para o layout todo */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    background: #fdfdfd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ===================== GRID HORIZONTAL ===================== */
+/* 3. Coluna da Esquerda (Lista) */
+.lista-servicos {
+    flex: 1; /* Ocupa metade do espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid #eee; /* Linha divisória */
+    padding-right: 20px;
+}
+
+/* 4. Itens da Lista (H3 e P) */
+.item-servico {
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border-left: 4px solid transparent; /* Borda de destaque (invisível) */
+
+    /* Transição suave para o fundo e borda */
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+.item-servico h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.item-servico p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 5px 0 0 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+/* 5. Efeito Hover/Active na Lista */
+.item-servico:hover,
+.item-servico.active {
+    background-color: #f5f5f5;
+    border-left-color: #e8491d; /* Sua cor laranja */
+}
+
+/* 6. Coluna da Direita (Display) */
+.display-servico {
+    flex: 1; /* Ocupa a outra metade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Prepara para o "fade in" */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 7. Classe 'visible' que o JS vai adicionar */
+.display-servico.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 8. Estilo do Lottie e da Descrição no Display */
+.display-servico dotlottie-wc {
+    margin-bottom: 20px;
+}
+
+.display-servico p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* ===================== GRID HORIZONTAL ===================== */
 .slider2 {
     position: relative;
